@@ -62,9 +62,13 @@
                             <label for="username" class="form-label">Username</label>
                             <input class="form-control @error('username')
                                     is-invalid
-                                @enderror" type="text" id="username" name="username" placeholder="Enter your username">
+                                @enderror" type="text" id="username" name="username" placeholder="Enter your username"
+                                value="{{ old('username') }}">
                             @error('username')
-                            {{ $message }}
+                            <span class="text-danger">
+                                
+                                {{ $message }}
+                            </span>
                             @enderror
                         </div>
                         <div class="mb-3">
@@ -79,8 +83,11 @@
                                     <span class="password-eye"></span>
                                 </div>
                             </div>
-                            @error('username')
-                            {{ $message }}
+                            @error('password')
+                            <span class="text-danger">
+
+                                {{ $message }}
+                            </span>
                             @enderror
                         </div>
 

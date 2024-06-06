@@ -2,9 +2,9 @@
 @section('title','')
 @section('content')
 @push('styles')
-        <!-- Sweet Alert-->
-        <link href="{{ asset('backend/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
-    
+<!-- Sweet Alert-->
+<link href="{{ asset('backend/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
+
 @endpush
 <div class="content">
 
@@ -19,6 +19,27 @@
             </div>
         </div>
 
+        {{-- <div class="row">
+            <div class="col-md-6 col-xl-3">
+                <div class="widget-rounded-circle card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="avatar-lg rounded-circle bg-soft-primary border-primary border">
+                                    <i class="fe-heart font-22 avatar-title text-primary"></i>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-end">
+                                    <h3 class="text-dark mt-1">$<span data-plugin="counterup">58,947</span></h3>
+                                    <p class="text-muted mb-1 text-truncate">Total Revenue</p>
+                                </div>
+                            </div>
+                        </div> <!-- end row-->
+                    </div>
+                </div> <!-- end widget-rounded-circle-->
+            </div> <!-- end col-->
+        </div> --}}
         <div class="row">
             <div class="col-md-6 col-xl-3">
                 <div class="widget-rounded-circle card">
@@ -105,14 +126,16 @@
 
 
 
+
+
     </div> <!-- container -->
 
 </div> <!-- content -->
 @push('scripts')
-        <!-- Sweet Alerts js -->
-        <script src="{{ asset('backend/assets/libs/sweetalert2/sweetalert2.all.min.js') }}"></script>
-        <!-- Sweet alert init js-->
-        <script src="{{ asset('backend/assets/js/pages/sweet-alerts.init.js') }}"></script>
-    
+<!-- Sweet Alerts js -->
+<script src="{{ asset('backend/assets/libs/sweetalert2/sweetalert2.all.min.js') }}"></script>
+<!-- Sweet alert init js-->
+<script src="{{ asset('backend/assets/js/pages/sweet-alerts.init.js') }}"></script>
+
 @endpush
 @endsection

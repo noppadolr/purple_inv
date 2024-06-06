@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -73,7 +74,17 @@ class AdminController extends Controller
 
             public function UpdatePassword(UpdatePasswordRequest $request)
             {
-                dd($request->all());
+                $user = Auth::user();
+                $user->password = Hash::make($request->password);
+                /** @var \App\Models\User $user **/
+                $user->save();
+                Auth::guard('web')->logout();
+        
+                $request->session()->invalidate();
+        
+                $request->session()->regenerateToken();
+        
+                return redirect('admin/login')->with('password-changed','Update Password Successfully');
             }
             //End Method
         

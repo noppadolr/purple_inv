@@ -75,8 +75,8 @@
 
 
         <!-- Vendor js -->
-        <script src="{{ asset('backend/assets/js/vendor.min.js') }}"></script>
         <script src="{{ asset('jquery-3.7.1.min.js') }}"></script>
+        <script src="{{ asset('backend/assets/js/vendor.min.js') }}"></script>
 
         <!-- App js -->
         <script src="{{ asset('backend/assets/js/app.min.js') }}"></script>
