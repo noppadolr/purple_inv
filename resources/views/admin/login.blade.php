@@ -13,6 +13,8 @@
 
     <!-- Theme Config Js -->
     <script src="assets/js/head.js"></script>
+    <!-- Sweet Alert-->
+    <link href="{{ asset('backend/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 
     <!-- Bootstrap css -->
     <link href="{{ asset('backend/assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="app-style" />
@@ -66,8 +68,8 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <a href="auth-recoverpw-2.html" class="text-muted float-end"><small>Forgot your
-                                    password?</small></a>
+                            {{-- <a href="auth-recoverpw-2.html" class="text-muted float-end"><small>Forgot your
+                                    password?</small></a> --}}
                             <label for="password" class="form-label">Password</label>
                             <div class="input-group input-group-merge">
                                 <input type="password" id="password" name="password" class="form-control @error('password')
@@ -150,6 +152,10 @@
     <!-- Authentication js -->
     <script src="{{ asset('jquery-3.7.1.min.js') }}"></script>
     <script src="{{ asset('backend/assets/js/pages/authentication.init.js') }}"></script>
+    <!-- Sweet Alerts js -->
+    <script src="{{ asset('backend/assets/libs/sweetalert2/sweetalert2.all.min.js') }}"></script>
+    <!-- Sweet alert init js-->
+    <script src="{{ asset('backend/assets/js/pages/sweet-alerts.init.js') }}"></script>
 
 </body>
 

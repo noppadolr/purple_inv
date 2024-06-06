@@ -1,5 +1,9 @@
 <div class="app-menu">
+    @php
+    $id =\Illuminate\Support\Facades\Auth::user()->id;
+    $adminData = \App\Models\User::find($id);
 
+@endphp
     <!-- Brand Logo -->
     <div class="logo-box">
         <!-- Brand Logo Light -->
@@ -20,13 +24,13 @@
 
         <!-- User box -->
         <div class="user-box text-center">
-            <img src="{{ asset('backend/assets/images/users/user-1.jpg') }}" alt="user-img" title="Mat Helme" class="rounded-circle avatar-md">
+            <img src="{{ url($adminData->avatar) }}" alt="user-img" title="Mat Helme" class="rounded-circle avatar-md">
             <div class="dropdown">
-                <a href="javascript: void(0);" class="dropdown-toggle h5 mb-1 d-block" data-bs-toggle="dropdown">Geneva Kennedy</a>
+                <a href="javascript: void(0);" class="dropdown-toggle h5 mb-1 d-block" data-bs-toggle="dropdown">{{ $adminData->name }}</a>
                 <div class="dropdown-menu user-pro-dropdown">
 
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                    <a href="{{ route('admin.profile') }}" class="dropdown-item notify-item">
                         <i class="fe-user me-1"></i>
                         <span>My Account</span>
                     </a>
@@ -51,7 +55,7 @@
 
                 </div>
             </div>
-            <p class="text-muted mb-0">Admin Head</p>
+            <p class="text-muted mb-0">{{ $adminData->email }}</p>
         </div>
 
         <!--- Menu -->
@@ -60,12 +64,12 @@
             <li class="menu-title">Navigation</li>
 
             <li class="menu-item">
-                <a href="#menuDashboards" data-bs-toggle="collapse" class="menu-link">
+                <a href="{{ route('admin.dashboard') }}" class="menu-link">
                     <span class="menu-icon"><i data-feather="airplay"></i></span>
                     <span class="menu-text"> Dashboards </span>
-                    <span class="badge bg-success rounded-pill ms-auto">4</span>
+                    
                 </a>
-                <div class="collapse" id="menuDashboards">
+                {{-- <div class="collapse" id="menuDashboards">
                     <ul class="sub-menu">
                         <li class="menu-item">
                             <a href="index.html" class="menu-link">
@@ -88,7 +92,7 @@
                             </a>
                         </li>
                     </ul>
-                </div>
+                </div> --}}
             </li>
 
             <li class="menu-title">Apps</li>

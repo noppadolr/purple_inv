@@ -2,6 +2,8 @@
 @section('title','')
 @section('content')
 @push('styles')
+        <!-- Sweet Alert-->
+        <link href="{{ asset('backend/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
     
 @endpush
 <div class="content">
@@ -107,6 +109,10 @@
 
 </div> <!-- content -->
 @push('scripts')
+        <!-- Sweet Alerts js -->
+        <script src="{{ asset('backend/assets/libs/sweetalert2/sweetalert2.all.min.js') }}"></script>
+        <!-- Sweet alert init js-->
+        <script src="{{ asset('backend/assets/js/pages/sweet-alerts.init.js') }}"></script>
     
 @endpush
 @endsection
