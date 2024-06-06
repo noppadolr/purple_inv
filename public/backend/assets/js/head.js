@@ -32,7 +32,7 @@
         sidenav: {
             size: "default",
             twocolumn: "light",
-            user: false,
+            user: true,
         },
     };
 
