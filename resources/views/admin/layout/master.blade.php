@@ -4,7 +4,13 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Dashboard | Ubold - Responsive Bootstrap 5 Admin Dashboard</title>
+        <title>
+            @if (View::hasSection('title'))
+            @yield('title')
+            @else
+            Page Title
+            @endif
+        </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -88,6 +94,7 @@
 
         <!-- Dashboar 1 init js-->
         <script src="{{ asset('backend/assets/js/pages/dashboard-1.init.js') }}"></script>
+        <script src="{{ asset('backend/assets/js/pages/datatables.init.js') }}"></script>
         @stack('scripts')
 
     </body>

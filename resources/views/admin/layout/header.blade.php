@@ -1,4 +1,8 @@
 <div class="navbar-custom">
+    @php
+        $id =\Illuminate\Support\Facades\Auth::user()->id;
+        $adminData = \App\Models\User::find($id);
+    @endphp
     <div class="topbar">
         <div class="topbar-menu d-flex align-items-center gap-1">
 

@@ -14,8 +14,8 @@ return Application::configure(basePath: dirname(__DIR__))
                 ->group(base_path('routes/web.php'));
             $router->middleware('web')
                 ->group(base_path('routes/admin.php'));
-                // $router->middleware('web')
-                // ->group(base_path('routes/frontend.php'));
+                $router->middleware('web')
+                ->group(base_path('routes/supplier.php'));
                 // $router->middleware('web')
                 // ->group(base_path('routes/frontend.php'));
                 // $router->middleware('web')
@@ -26,7 +26,11 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->alias([
+
+            'authen' => \App\Http\Middleware\Authenticate::class,
+
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

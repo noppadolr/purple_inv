@@ -1,5 +1,5 @@
 @extends('admin.layout.master')
-@section('title','')
+@section('title','Admin Panel')
 @section('content')
 @push('styles')
 <!-- Sweet Alert-->
