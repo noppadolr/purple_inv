@@ -12,6 +12,9 @@ Route::controller(SupplierController::class)->group(function(){
         Route::view('supplier/add','backend.supplier.supplier_add')->name('supplier.add');
         Route::post('supplier/store','SupplierStore')->name('supplier.store');
         Route::get('supplier/edit/{id}','SupplierEdit')->name('supplier.edit');
+        Route::post('supplier/update','supplierUpdate')->name('supplier.update');
+        Route::get('supplier/delete/{id}', 'destroy')->name('supplier.delete');
+        Route::get('supplier/view/{id}','view')->name('supplier.view');
 
     });
 

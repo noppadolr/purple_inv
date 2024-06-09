@@ -12,7 +12,7 @@ require __DIR__.'/auth.php';
 
 Route::group(['prefix'=>'customer','as'=>'customer.'], function(){
     Route::get('/', 'AccountController@index')->name('index');
-    
+
 });
 
 
@@ -21,6 +21,12 @@ Route::controller(CustomerController::class)
 ->as('customer.')
 ->middleware('authen')
 ->group(function () {
-    Route::get('/all', 'index')->name('index');
+    Route::get('/all', 'index')->name('all');
+    Route::get('/create', 'create')->name('create');
+    Route::post('/store', 'store')->name('store');
+    Route::get('/delete/{id}', 'destroy')->name('delete');
+    Route::get('/edit/{id}','edit')->name('edit');
+    Route::post('/update','update')->name('update');
+    
 
 });

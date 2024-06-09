@@ -1,5 +1,5 @@
 @extends('admin.layout.master')
-@section('title','')
+@section('title','Profile')
 @section('content')
 @push('styles')
 
@@ -192,17 +192,8 @@
 
     </div>
     @push('scripts')
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('#image').change(function(e){
-                var reader = new FileReader();
-                reader.onload = function(e){
-                    $('#showImage').attr('src',e.target.result);
-                }
-                reader.readAsDataURL(e.target.files['0']);
-            });
-        });
-    </script>
+    @include('admin.script')
+ 
 
     @endpush
     @endsection

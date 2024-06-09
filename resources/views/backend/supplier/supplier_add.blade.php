@@ -3,7 +3,7 @@
 @section('content')
 @push('styles')
 
-    
+
 @endpush
 <div class="content">
     <div class="container-fluid">
@@ -14,7 +14,7 @@
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Inventory</a></li>
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Spplier</a></li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Supplier</a></li>
                                 <li class="breadcrumb-item active">Add</li>
                             </ol>
                         </div>
@@ -35,11 +35,11 @@
                                 <div class="row">
                                     <div class="mb-3">
                                         <label for="name" class="form-label">Name</label>
-                                        <input type="text" 
-                                        class="form-control 
+                                        <input type="text"
+                                        class="form-control
                                         @error('name')
                                             is-invalid
-                                        @enderror" 
+                                        @enderror"
                                         id="name" name="name" >
                                         @error('name')
                                             <spane class="text-danger">
@@ -54,11 +54,11 @@
                                     <div class="col md-6">
                                         <div class="mb-3">
                                             <label for="phone" class="form-label">Phone</label>
-                                            <input type="text" 
-                                            class="form-control                                         
+                                            <input type="text"
+                                            class="form-control
                                             @error('phone')
                                              is-invalid
-                                            @enderror" 
+                                            @enderror"
                                             id="phone" name="phone" placeholder="" >
                                             @error('phone')
                                             <spane class="text-danger">
@@ -71,12 +71,12 @@
                                     <div class="col md-6">
                                         <div class="mb-3">
                                             <label for="email" class="form-label">Email</label>
-                                            <input type="email" class="form-control                                            
+                                            <input type="email" class="form-control
                                              @error('email')
                                             is-invalid
                                            @enderror" id="email" name="email" placeholder="" >
                                            @error('email')
-                                           <span class="text-danger">{{ $message }}</span> 
+                                           <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                         </div>
                                     </div>
@@ -86,14 +86,14 @@
                                 <div class="row">
                                     <div class="mb-3">
                                         <label for="address" class="form-label">Address</label>
-                                        <input type="text" 
+                                        <input type="text"
                                         class="form-control
                                         @error('address')
                                             is-invalid
-                                        @enderror" 
+                                        @enderror"
                                         id="address" name="address" placeholder="" >
                                         @error('address')
-                                           <span class="text-danger">{{ $message }}</span> 
+                                           <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                 </div>
@@ -116,7 +116,7 @@
     </div>
     <!-- end container-fluid -->
 
-    
+
 
 </div>
 @push('scripts')
@@ -125,6 +125,6 @@
 
             <!-- Validation init js-->
             <script src="{{ asset('backend/assets/js/pages/form-validation.init.js') }}"></script>
-    
+
 @endpush
 @endsection

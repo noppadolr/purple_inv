@@ -25,7 +25,7 @@ class SupplierAddRequest extends FormRequest
             'name' => ['required', 'string', 'max:255'],
             'address' => ['required', 'string'],
             'email' => ['required', 'string', 'email'],
-            'phone' => ['required','numeric','min:10'],
+            'phone' => ['required','min:10'],
         ];
     }
 }

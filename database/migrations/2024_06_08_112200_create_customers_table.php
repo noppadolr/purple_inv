@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            $table->string('customer_image')->default('/upload/no_image.jpg'); 
+            $table->string('customer_image')->nullable(); 
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->string('address')->nullable();

@@ -16,8 +16,8 @@ return Application::configure(basePath: dirname(__DIR__))
                 ->group(base_path('routes/admin.php'));
                 $router->middleware('web')
                 ->group(base_path('routes/supplier.php'));
-                // $router->middleware('web')
-                // ->group(base_path('routes/frontend.php'));
+                $router->middleware('web')
+                ->group(base_path('routes/customer.php'));
                 // $router->middleware('web')
                 // ->group(base_path('routes/admin.php'));
         },

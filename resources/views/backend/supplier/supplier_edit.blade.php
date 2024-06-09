@@ -34,12 +34,12 @@
                                     <a  href="{{ route('supplier.all') }}" 
                                         class="button btn btn-primary waves-effect waves-light" 
                                         style="float: right;">
-                                        <i class="mdi mdi-arrow-left-bold-outline me-1"></i> 
+                                        <i class="mdi mdi-arrow-left-bold-outline me-1"></i>  
                                         Back
                                     </a>
                                 </div>
                             </div>
-                            <form method="POST" action="{{ route('supplier.store') }}">
+                            <form method="POST" action="{{ route('supplier.update') }}">
                                 @csrf
                                 <input type="hidden" name="find_id" id="find_id" value="{{ $suppliers->id }}">
                                 <div class="row">
@@ -112,7 +112,7 @@
 
                                 <button class="btn btn-primary" type="submit">
                                     <i class="mdi mdi-content-save"  title="Edit"></i>
-                                    Save
+                                    Update
                                 </button>
                             </form>
 

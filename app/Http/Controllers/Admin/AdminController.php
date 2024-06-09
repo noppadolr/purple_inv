@@ -50,7 +50,7 @@ class AdminController extends Controller
         }
         //End Method
 
-        public function UpdateProfile(UpdateProfileRequest $request)
+        public function UpdateProfile(UpdateProfileRequest $request) 
         {
             $id = Auth::user()->id;
             $data = User::query()->find($id);
@@ -68,7 +68,7 @@ class AdminController extends Controller
                 $data['avatar'] = $filename;
             }
             $data->save();
-            return redirect()->route('admin.profile')->with('Profileupdated','Admin Profile Updated');
+            return redirect()->route('admin.profile')->with('profile_updated','Admin profile updated successfully');
         }
         //End Method
 
