@@ -16,7 +16,7 @@
             
             });    
     @endif
-</script>
+</script>  
 <script>
   @if(Session::has('delete_success'))
       $(document).ready( function () {

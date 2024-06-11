@@ -19,7 +19,7 @@ class SupplierController extends Controller
     //End Method
 
     public function SupplierStore(SupplierAddRequest $request)
-    {
+    { 
         $id = Auth::user()->id;
         Supplier::insert([
             'name' => $request->name,

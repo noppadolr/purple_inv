@@ -96,7 +96,7 @@
                     </ul>
                 </div>
             </li>
-
+            {{-- customer begin --}}
             <li class="menu-item">
                 <a href="#menuCustomer" data-bs-toggle="collapse"
                     class="menu-link {{ ((Request::is('customer/*')) ? 'show' : '') }}">
@@ -122,6 +122,35 @@
                     </ul>
                 </div>
             </li>
+            {{-- customer end  --}}
+
+            {{-- Unit begin --}}
+            <li class="menu-item">
+                <a href="#menuUnit" data-bs-toggle="collapse"
+                    class="menu-link {{ ((Request::is('unit/*')) ? 'show' : '') }}">
+                    <span class="menu-icon"><i data-feather="users"></i></span>
+                    <span class="menu-text {{ ((Request::is('unit/*')) ? 'active' : '') }}">Manage Unit</span>
+                    <span class="menu-arrow" 
+                        @if (Request::is('unit/*')) style="transform: rotate(90deg);"
+                        @endif>
+                    </span>
+                </a>
+                <div class="collapse {{ ((Request::is('unit/*')) ? 'show' : '') }}" id="menuUnit">
+                    <ul class="sub-menu">
+                        <li class="menu-item">
+                            <a href="{{ url('unit/all') }}" class="menu-link">
+                                <span class="menu-text">Unit All</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="{{ url('unit/create') }}" class="menu-link">
+                                <span class="menu-text">Add Unit</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            {{-- Unit end  --}}
         </ul>
         <!--- End Menu -->
         <div class="clearfix"></div>
