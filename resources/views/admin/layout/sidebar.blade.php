@@ -151,6 +151,39 @@
                 </div>
             </li>
             {{-- Unit end  --}}
+
+                        {{-- Unit begin --}}
+                        <li class="menu-item">
+                            <a href="#menuCategory" data-bs-toggle="collapse"
+                                class="menu-link {{ ((Request::is('category/*')) ? 'show' : '') }}">
+                                <span class="menu-icon"><i data-feather="users"></i></span>
+                                <span class="menu-text {{ ((Request::is('category/*')) ? 'active' : '') }}">Category </span>
+                                <span class="menu-arrow" 
+                                    @if (Request::is('category/*')) style="transform: rotate(90deg);"
+                                    @endif>
+                                </span>
+                            </a>
+                            <div class="collapse {{ ((Request::is('category/*')) ? 'show' : '') }}" id="menuCategory">
+                                <ul class="sub-menu">
+                                    <li class="menu-item">
+                                        <a href="{{ url('category/all') }}" class="menu-link">
+                                            <span class="menu-text">Category All</span>
+                                        </a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="{{ url('category/create') }}" class="menu-link">
+                                            <span class="menu-text">Add Category</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        {{-- Unit end  --}}
+
+
+
+
+
         </ul>
         <!--- End Menu -->
         <div class="clearfix"></div>
