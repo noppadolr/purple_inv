@@ -171,7 +171,7 @@
                                         </a>
                                     </li>
                                     <li class="menu-item">
-                                        <a href="{{ url('category/create') }}" class="menu-link">
+                                        <a href="{{ url('category/add') }}" class="menu-link">
                                             <span class="menu-text">Add Category</span>
                                         </a>
                                     </li>

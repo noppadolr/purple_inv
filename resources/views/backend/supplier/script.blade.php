@@ -54,7 +54,7 @@
           
           });    
   @endif
-</script>
+</script> 
 
 <script>
   $(function(){

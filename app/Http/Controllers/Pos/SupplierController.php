@@ -19,7 +19,7 @@ class SupplierController extends Controller
     //End Method
 
     public function SupplierStore(SupplierAddRequest $request)
-    { 
+    {  
         $id = Auth::user()->id;
         Supplier::insert([
             'name' => $request->name,
@@ -39,7 +39,7 @@ class SupplierController extends Controller
         return view('backend.supplier.supplier_edit', compact('suppliers'));
     }
     //End Method
-    public function SupplierUpdate(Request $request)
+    public function SupplierUpdate(Request $request) 
     {
         $request->validate(
             [

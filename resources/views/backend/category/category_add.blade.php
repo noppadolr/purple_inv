@@ -1,5 +1,5 @@
 @extends('admin.layout.master')
-@section('title','Edit Unit')
+@section('title','Create Unit')
 @section('content')
 @push('styles')
 
@@ -14,11 +14,11 @@
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Inventory</a></li>
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Unit</a></li>
-                                <li class="breadcrumb-item active">Edit</li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Category</a></li>
+                                <li class="breadcrumb-item active">Add</li>
                             </ol>
                         </div>
-                        <h4 class="page-title">Edit Unit</h4>
+                        <h4 class="page-title">Add New Category</h4>
                     </div>
                 </div>
             </div>
@@ -30,19 +30,17 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <form method="POST" action="{{ route('unit.update') }}">
+                            <form method="POST" action="{{ route('category.store') }}" id="myForm">
                                 @csrf
-                                <input type="hidden" name="id" value="{{ $units->id }}">
                                 <div class="row">
                                     <div class="mb-3">
-                                        {{-- <label for="name" class="form-label">Name</label> --}}
-                                        <h4 class="header-title">Name</h4>
+                                        <label for="name" class="form-label">Name</label>
                                         <input type="text"
                                         class="form-control
                                         @error('name')
                                             is-invalid
                                         @enderror"
-                                        id="name" name="name"  value="{{ $units->name }}">
+                                        id="name" name="name" >
                                         @error('name')
                                             <spane class="text-danger">
                                                 {{ $message }}
@@ -52,39 +50,13 @@
                                 </div>
                                 {{-- row --}}
 
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <h4 class="header-title">Change Status</h4>
-                                      <select class="form-select form-control @error('status')
-                                          is-invalid
-                                      @enderror" name="status" id="test">
-                                        <option selected="" value="">Open this select menu</option>
-                                        @foreach ($statuses as $key => $status)
-                                        <option class="form-select" value="{{ $status->status_id }}" {{ ($status->status_id == $units->status) ? "selected" : "" }} > 
-                                            {{ $status->name }} 
-                                        </option>
-                                      @endforeach 
-
-                                    </select>
-                                    @error('status')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-
-
-
-                                    </div>
-                                </div>
-                                <p class="sub-header">
-
-                                </p>
-
 
 
 
 
                                 <button class="btn btn-primary" type="submit">
                                     <i class="mdi mdi-content-save"  title="Edit"></i>
-                                    Update
+                                    Save
                                 </button>
                             </form>
 
@@ -107,6 +79,8 @@
 
             <!-- Validation init js-->
             <script src="{{ asset('backend/assets/js/pages/form-validation.init.js') }}"></script>
+            <script src="{{ asset('validate.min.js') }}"></script>
+            @include('backend.category.script')
 
 @endpush
 @endsection

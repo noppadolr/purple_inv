@@ -1,5 +1,5 @@
 <script>
-    @if(Session::has('add-unit-success'))
+    @if(Session::has('add_success'))
         $(document).ready( function () {
             const Toast = Swal.mixin({
                     toast: true,
@@ -11,15 +11,46 @@
                     });
                 Toast.fire({
                 icon: "success",
-                title: '{{ session('add-unit-success') }}',  
+                title: '{{ session('add_success') }}',  
                 });
             
             });    
     @endif
   </script>
 
+<script src="{{ asset('validate.min.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(function (){
+        $('#myForm').validate({
+            rules: {
+                name: {
+                    required : true,
+                }, 
+
+            },
+            messages :{
+                name: {
+                    required : 'Please Enter Your Name',
+                },
+            },
+            errorElement : 'span', 
+            errorPlacement: function (error,element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight : function(element, errorClass, validClass){
+                $(element).addClass('is-invalid');
+            },
+            unhighlight : function(element, errorClass, validClass){
+                $(element).removeClass('is-invalid');
+            },
+        });
+    });
+    
+</script>
+
 <script>
-    @if(Session::has('unit_updated'))
+    @if(Session::has('category_updated'))
         $(document).ready( function () {
             const Toast = Swal.mixin({
                     toast: true,
@@ -31,12 +62,32 @@
                     });
                 Toast.fire({
                 icon: "success",
-                title: '{{ session('unit_updated') }}',  
+                title: '{{ session('category_updated') }}',  
                 });
             
             });    
     @endif
-</script>
+</script> 
+
+<script>
+    @if(Session::has('add_success'))
+        $(document).ready( function () {
+            const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    backdrop: false,
+                    });
+                Toast.fire({
+                icon: "success",
+                title: '{{ session('add_success') }}',  
+                });
+            
+            });    
+    @endif
+  </script> 
 
 <script>
     @if(Session::has('delete_success'))
@@ -57,6 +108,26 @@
             });    
     @endif
   </script>
+
+<script>
+    @if(Session::has('add_success'))
+        $(document).ready( function () {
+            const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    backdrop: false,
+                    });
+                Toast.fire({
+                icon: "success",
+                title: '{{ session('add_success') }}',  
+                });
+            
+            });    
+    @endif
+  </script> 
 
 <script>
     $(function(){
