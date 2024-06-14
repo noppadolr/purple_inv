@@ -23,6 +23,8 @@ class CustomerController extends Controller
     public function create()
     {
         return view('backend.customer.create');
+
+
     }
 
     public function store(Request $request)
@@ -75,7 +77,7 @@ class CustomerController extends Controller
 
         // return response()->json([
         //     'success' => 'Record deleted successfully!',
-           
+
 
         // ]);
     }
