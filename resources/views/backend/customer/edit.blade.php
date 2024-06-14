@@ -33,7 +33,7 @@
                             <form method="POST" action="{{ route('customer.update') }}" id="myForm" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
-                                    <div class="mb-3">
+                                    <div class="form-group  mb-3">
                                         <input type="hidden" name="id" id="id" value="{{ $customers->id }}">
                                         <label for="name" class="form-label">Name</label>
                                         <div class="form-group">

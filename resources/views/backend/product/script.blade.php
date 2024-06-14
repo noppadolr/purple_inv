@@ -84,3 +84,51 @@
     
       });
     </script>
+
+<script type="text/javascript">
+  $(document).ready(function (){
+      $('#myForm').validate({
+          rules: {
+              name: {
+                  required : true,
+              }, 
+
+              supplier_id: {
+                  required : true,
+              },
+               unit_id: {
+                  required : true,
+              },
+               category_id: {
+                  required : true,
+              },
+          },
+          messages :{
+              name: {
+                  required : 'Please Enter Your Name',
+              },
+              supplier_id: {
+                  required : 'Please Select Supplier',
+              },
+              unit_id: {
+                  required : 'Please Select Unit',
+              },
+              category_id: {
+                  required : 'Please Select Category',
+              },
+          },
+          errorElement : 'span', 
+          errorPlacement: function (error,element) {
+              error.addClass('invalid-feedback');
+              element.closest('.form-group').append(error);
+          },
+          highlight : function(element, errorClass, validClass){
+              $(element).addClass('is-invalid');
+          },
+          unhighlight : function(element, errorClass, validClass){
+              $(element).removeClass('is-invalid');
+          },
+      });
+  });
+  
+</script>

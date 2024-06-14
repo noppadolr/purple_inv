@@ -62,7 +62,7 @@
                                         <a href="{{ route('unit.edit',$item->id) }}" class="text-body fw-semibold">{{ $item->name}}</a>
                                     </td>
                                     <td>{{date('d-M-Y', strtotime($item->created_at )) }}</td>
-                                    <td>{{ $item->created_by }}</td>
+                                    <td>{{ $item['user']['name'] }}</td>
                                     <td>
                                         @if ($item->status ==1)
                                         <span class="badge bg-soft-success text-success">Active</span>

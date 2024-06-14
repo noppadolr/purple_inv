@@ -37,7 +37,7 @@
                     <div class="card-body">
                         <div class="row mb-3">
                             <div class="col-sm-12">
-                                <a href="{{ route('supplier.add') }}"
+                                <a href="{{ route('product.add') }}"
                                     class="button btn btn-primary waves-effect waves-light" style="float: right;">
                                     <i class="mdi mdi-plus-circle me-1"></i>
                                     Add Product
@@ -68,13 +68,10 @@
                                         <a href="{{ route('supplier.edit',$item->id) }}" class="text-body fw-semibold">{{ $item->name
                                             }}</a>
                                     </td>
-                                    {{-- <td>{{ $item->name }}</td> --}}
-                                    
-                                    <td>{{ $item->phone }}</td>
-                                    <td>{{ $item->supplier_id }}</td>
-                                    <td>{{ $item->unit_id }}</td>
-                                    <td>{{ $item->category_id }}</td>
-                                    <td>
+                                    <td>{{ $item['supplier']['name']  }}</td>
+                                    <td>{{ $item['unit']['name']  }}</td>
+                                    <td>{{ $item['category']['name']  }}</td>
+                                    {{-- <td>
                                         @if ($item->status ==1)
                                         <span class="badge bg-soft-success text-success">Active</span>
                                         @endif
@@ -85,7 +82,7 @@
 
 
 
-                                    </td>
+                                    </td> --}}
                                     <td>
 
 
