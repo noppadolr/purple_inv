@@ -1,5 +1,5 @@
 <script>
-    @if(Session::has('add-unit-success'))
+    @if(Session::has('added'))
         $(document).ready( function () {
             const Toast = Swal.mixin({
                     toast: true,
@@ -11,7 +11,7 @@
                     });
                 Toast.fire({
                 icon: "success",
-                title: '{{ session('add-unit-success') }}',  
+                title: '{{ session('added') }}',  
                 });
             
             });    
@@ -19,7 +19,7 @@
   </script>
 
 <script>
-    @if(Session::has('unit_updated'))
+    @if(Session::has('updated'))
         $(document).ready( function () {
             const Toast = Swal.mixin({
                     toast: true,
@@ -31,7 +31,7 @@
                     });
                 Toast.fire({
                 icon: "success",
-                title: '{{ session('unit_updated') }}',  
+                title: '{{ session('updated') }}',  
                 });
             
             });    
@@ -39,7 +39,7 @@
 </script>
 
 <script>
-    @if(Session::has('delete_success'))
+    @if(Session::has('deleted'))
         $(document).ready( function () {
             const Toast = Swal.mixin({
                     toast: true,
@@ -51,7 +51,7 @@
                     });
                 Toast.fire({
                 icon: "success",
-                title: '{{ session('delete_success') }}',  
+                title: '{{ session('deleted') }}',  
                 });
             
             });    

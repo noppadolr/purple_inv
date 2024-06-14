@@ -6,6 +6,8 @@
     type="text/css" />
 
 @endpush
+
+
 <div class="content">
 
     <div class="container-fluid">
@@ -111,10 +113,9 @@
         {{-- end table --}}
     </div>
     <!-- end container-fluid -->
-
-
-
 </div>
+
+
 @push('scripts')
 <script src="{{ asset('backend/assets/libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('backend/assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js') }}"></script>
